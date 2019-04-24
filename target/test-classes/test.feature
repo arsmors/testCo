@@ -3,12 +3,12 @@
 
 Feature: A description
 
-  Scenario: A scenario
+  Scenario Outline: A scenario
     When I get to stackoverflow webpage
-#    And In search field enter "<keywords>"
+    And In search field enter "<keywords>"
 #    Then All relevant topics are saved in the textfile
-#    Examples:
-#      | keywords |
-#      | 2013     |
+    Examples:
+      | keywords |
+      | 2013     |
 
 
