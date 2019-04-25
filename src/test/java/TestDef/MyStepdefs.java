@@ -1,5 +1,7 @@
 package TestDef;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
@@ -52,6 +54,17 @@ public class MyStepdefs {
         writer.newLine();
         writer.flush();
         writer.close();
+
+        String json = new Gson().toJson(texts);
+
+        JsonObject list = new JsonObject();
+        list.addProperty(string, json);
+
+        File myFile2 = new File("json.txt");
+        BufferedWriter writer2 = new BufferedWriter(new FileWriter(myFile2));
+        writer2.write(list.toString());
+        writer2.flush();
+        writer2.close();
 
         driver.quit();
 
