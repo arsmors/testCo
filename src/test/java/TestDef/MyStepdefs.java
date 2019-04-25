@@ -43,11 +43,27 @@ public class MyStepdefs {
         List<WebElement> listItems = driver.findElements(listOfQuestions);
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
 
-        for (String list : texts) {
-            if (list.contains(string)) {
-                System.out.println(list);
-            }
-        }
+        texts.removeIf(n -> !(n.contains(string)));
+
+        File myFile = new File("text.txt");
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(myFile));
+        writer.write(texts + "\n");
+        writer.newLine();
+        writer.flush();
+        writer.close();
+
+        driver.quit();
+
+    }
+}
+
+
+
+//        for (String list : texts) {
+//            System.out.println(list);
+//        }
+
 
 //
 //        String fileName = "out.txt";
@@ -65,20 +81,20 @@ public class MyStepdefs {
 //            e.printStackTrace();
 //        }
 
-        File myFile = new File("text.txt");
-
-        for (String list : texts) {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
-            if (list.contains(string)) {
-                writer.write(list + "\n");
-                writer.flush();
-                writer.close();
-            }
-        }
-
-        driver.quit();
-    }
-}
+//        File myFile = new File("text.txt");
+//
+//        for (String list : texts) {
+//            BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
+//            if (list.contains(string)) {
+//                writer.write(list + "\n");
+//                writer.flush();
+//                writer.close();
+//            }
+//        }
+//
+//        driver.quit();
+//    }
+//}
 //
 //        for (String list : texts) {
 //            if(list.contains(string)){

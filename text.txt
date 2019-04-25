@@ -1,10 +1,2 @@
-Q: How do I add an existing Solution to GitHub from Visual Studio 2013
-Q: Why is VS 2013 very slow?
-Q: How can I switch my signed in user in Visual Studio 2013?
-Q: Disable ALL CAPS menu items in Visual Studio 2013
-Q: How to add MVC5 to Visual Studio 2013?
-Q: How do you reset the Zoom in Visual Studio 2010/2012/2013/2015/2017
-Q: How to hide reference counts in VS2013?
-Q: How to enable C# 6.0 feature in Visual Studio 2013?
-Q: How to correctly display .csv files within Excel 2013?
-Q: How can I disable __vwd/js/artery in VS.NET 2013?
+[Q: Why is VS 2013 very slow?, Q: How can I switch my signed in user in Visual Studio 2013?, Q: Disable ALL CAPS menu items in Visual Studio 2013, Q: How to add MVC5 to Visual Studio 2013?, Q: How do you reset the Zoom in Visual Studio 2010/2012/2013/2015/2017, Q: How to hide reference counts in VS2013?, Q: How to enable C# 6.0 feature in Visual Studio 2013?, Q: How to correctly display .csv files within Excel 2013?, Q: How can I disable __vwd/js/artery in VS.NET 2013?]
+
