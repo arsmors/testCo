@@ -9,6 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,22 +35,56 @@ public class MyStepdefs {
     }
 
     @And("^In search field enter \"([^\"]*)\"$")
-    public void inSearchFieldEnter(String string) {
+    public void inSearchFieldEnter(String string) throws IOException {
         driver.findElement(search).click();
         driver.findElement(search).sendKeys(string);
         driver.findElement(search).submit();
 
         List<WebElement> listItems = driver.findElements(listOfQuestions);
-
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
 
         for (String list : texts) {
-            if(list.contains(string)){
+            if (list.contains(string)) {
                 System.out.println(list);
             }
         }
 
+//
+//        String fileName = "out.txt";
+//
+//        try {
+//            PrintWriter outputStream = new PrintWriter(fileName);
+//
+//            for (String list : texts) {
+//                if (list.contains(string)) {
+//                    outputStream.println(list);
+//                    outputStream.close();
+//                }
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
+        File myFile = new File("text.txt");
+
+        for (String list : texts) {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
+            if (list.contains(string)) {
+                writer.write(list + "\n");
+                writer.flush();
+                writer.close();
+            }
+        }
+
+        driver.quit();
+    }
+}
+//
+//        for (String list : texts) {
+//            if(list.contains(string)){
+//                System.out.println(list);
+//            }
+//        }
 
 
 //        for (int i = 0; i < listItems.size(); i++) {
@@ -56,5 +95,4 @@ public class MyStepdefs {
 //
 //        }
 
-    }
-}
+
