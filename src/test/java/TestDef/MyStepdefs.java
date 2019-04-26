@@ -49,7 +49,6 @@ public class MyStepdefs {
 
         File myFile = new File("text.txt");
 
-
         BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
         for (String text : texts) {
 
