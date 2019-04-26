@@ -44,7 +44,9 @@ public class MyStepdefs {
         driver.findElement(search).submit();
 
         List<WebElement> listItems = driver.findElements(listOfQuestions);
+
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
+
         texts.removeIf(n -> !(n.contains(string)));
 
         File myFile = new File("text.txt");
@@ -63,6 +65,9 @@ public class MyStepdefs {
 
         List<WebElement> listItems = driver.findElements(listOfQuestions);
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
+
+        texts.removeIf(n -> !(n.contains(string)));
+
         String json = new Gson().toJson(texts);
 
         JsonObject list = new JsonObject();
