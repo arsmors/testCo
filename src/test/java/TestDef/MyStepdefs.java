@@ -50,7 +50,7 @@ public class MyStepdefs {
         File myFile = new File("text.txt");
 
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter(myFile));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
         for (String text: texts) {
 
             writer.write(text + "\n");
@@ -64,8 +64,9 @@ public class MyStepdefs {
         list.addProperty(string, json);
 
         File myFile2 = new File("json.txt");
-        BufferedWriter writer2 = new BufferedWriter(new FileWriter(myFile2));
-        writer2.write(list.toString());
+        BufferedWriter writer2 = new BufferedWriter(new FileWriter(myFile2, true));
+
+        writer2.write(list.toString() + "\n");
         writer2.flush();
         writer2.close();
 
