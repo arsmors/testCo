@@ -6,27 +6,4 @@ Q: How do you reset the Zoom in Visual Studio 2010/2012/2013/2015/2017
 Q: How to hide reference counts in VS2013?
 Q: How to enable C# 6.0 feature in Visual Studio 2013?
 Q: How to correctly display .csv files within Excel 2013?
-Q: How can I disable __vwd/js/artery in VS.NET 2013?
-Q: Javascript 2014-08-19
-Q: Change date format Nov 18, 2014 to 2014-11-18
-Q: Why is date() returning September 2014 instead of Oct 2014
-Q: Convert 'Apr 26 2014' to '2014-04-26' in grails
-Q: JavaScript Date Bug February 2014
-Q: morris.js - month names (2014 Jan) instead of 2014-01
-Q: SQL Server 2014 Evaluation database to SQL Server 2014 Express?
-Q: Why is VS 2013 very slow?
-Q: How can I switch my signed in user in Visual Studio 2013?
-Q: Disable ALL CAPS menu items in Visual Studio 2013
-Q: How to add MVC5 to Visual Studio 2013?
-Q: How do you reset the Zoom in Visual Studio 2010/2012/2013/2015/2017
-Q: How to hide reference counts in VS2013?
-Q: How to enable C# 6.0 feature in Visual Studio 2013?
-Q: How to correctly display .csv files within Excel 2013?
-Q: How can I disable __vwd/js/artery in VS.NET 2013?
-Q: Javascript 2014-08-19
-Q: Change date format Nov 18, 2014 to 2014-11-18
-Q: Why is date() returning September 2014 instead of Oct 2014
-Q: Convert 'Apr 26 2014' to '2014-04-26' in grails
-Q: JavaScript Date Bug February 2014
-Q: morris.js - month names (2014 Jan) instead of 2014-01
-Q: SQL Server 2014 Evaluation database to SQL Server 2014 Express?
+Q: How do I add an existing Solution to GitHub from Visual Studio 2013

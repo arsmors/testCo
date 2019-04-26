@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -44,20 +45,25 @@ public class MyStepdefs {
 
         List<WebElement> listItems = driver.findElements(listOfQuestions);
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
-
         texts.removeIf(n -> !(n.contains(string)));
 
         File myFile = new File("text.txt");
 
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
-        for (String text: texts) {
+        for (String text : texts) {
 
             writer.write(text + "\n");
             writer.flush();
         }
         writer.close();
+    }
 
+    @Then("^All relevant topics with \"([^\"]*)\" are saved in the textfile$")
+    public void allRelevantTopicsWithAreSavedInTheTextfile(String string) throws Throwable {
+
+        List<WebElement> listItems = driver.findElements(listOfQuestions);
+        List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
         String json = new Gson().toJson(texts);
 
         JsonObject list = new JsonObject();
@@ -71,10 +77,8 @@ public class MyStepdefs {
         writer2.close();
 
         driver.quit();
-
     }
 }
-
 
 
 //        for (String list : texts) {
