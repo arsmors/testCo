@@ -49,10 +49,13 @@ public class MyStepdefs {
 
         File myFile = new File("text.txt");
 
+
         BufferedWriter writer = new BufferedWriter(new FileWriter(myFile));
-        writer.write(texts + "\n");
-        writer.newLine();
-        writer.flush();
+        for (String text: texts) {
+
+            writer.write(text + "\n");
+            writer.flush();
+        }
         writer.close();
 
         String json = new Gson().toJson(texts);
