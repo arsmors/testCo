@@ -1,14 +1,12 @@
-Q: Does Python have a ternary conditional operator?
-Q: What are metaclasses in Python?
-Q: Does Python have a string 'contains' substring method?
-Q: Calling an external command in Python
-Q: How can I safely create a nested directory in Python?
-Q: How can I make a time delay in Python?
-Q: Finding the index of an item given a list containing it in Python
-Q: Is there a way to run Python on Android?
-Q: How do I concatenate two lists in Python?
-Q: Manually raising (throwing) an exception in Python
-Q: Replacements for switch statement in Python?
+Q: Why is VS 2013 very slow?
+Q: How can I switch my signed in user in Visual Studio 2013?
+Q: Disable ALL CAPS menu items in Visual Studio 2013
+Q: How to add MVC5 to Visual Studio 2013?
+Q: How do you reset the Zoom in Visual Studio 2010/2012/2013/2015/2017
+Q: How to hide reference counts in VS2013?
+Q: How to enable C# 6.0 feature in Visual Studio 2013?
+Q: How to correctly display .csv files within Excel 2013?
+Q: How do I add an existing Solution to GitHub from Visual Studio 2013
 
 Q: Does Python have a ternary conditional operator?
 Q: What are metaclasses in Python?
@@ -21,8 +19,6 @@ Q: Is there a way to run Python on Android?
 Q: How do I concatenate two lists in Python?
 Q: Manually raising (throwing) an exception in Python
 Q: Replacements for switch statement in Python?
-
-
 
 Q: Does Python have a ternary conditional operator?
 Q: What are metaclasses in Python?

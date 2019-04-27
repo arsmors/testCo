@@ -1,5 +1,7 @@
 package TestDef;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -28,10 +30,9 @@ public class HomePage {
         baseFunc.getElement(search).click();
         baseFunc.getElement(search).sendKeys("'" + string + "'");
         baseFunc.getElement(search).submit();
-
     }
 
-    public void getQuestionTopicsAndWriteToFile(String string) {
+    public void sortQuestionTopicsAndWriteToFile(String string) {
         List<WebElement> listItems = baseFunc.getElements(listOfQuestions);
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
         texts.removeIf(n -> !(n.contains(string)));
@@ -51,7 +52,27 @@ public class HomePage {
         } catch (Exception e) {
             System.out.println("xx");
         };
+    }
 
+    public void sortQuestionTopicsAndWriteToJson(String string) {
+        List<WebElement> listItems = baseFunc.getElements(listOfQuestions);
+        List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
 
+        texts.removeIf(n -> !(n.contains(string)));
+
+        String json = new Gson().toJson(texts);
+
+        JsonObject list = new JsonObject();
+        list.addProperty(string, json);
+
+        File myFile2 = new File("json.txt");
+        try {
+            BufferedWriter writer2 = new BufferedWriter(new FileWriter(myFile2, true));
+            writer2.write(list.toString() + "\n");
+            writer2.flush();
+            writer2.close();
+        } catch (Exception e) {
+            System.out.println("xx");
+        };
     }
 }

@@ -36,4 +36,8 @@ public class BaseFunc {
         Assert.assertFalse("No elements found", driver.findElements(locator).isEmpty());
         return driver.findElements(locator);
     }
+
+    public void closePage() {
+        driver.quit();
+    }
 }
