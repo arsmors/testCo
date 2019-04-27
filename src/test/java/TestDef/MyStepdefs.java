@@ -57,6 +57,7 @@ public class MyStepdefs {
             writer.write(text + "\n");
             writer.flush();
         }
+        writer.newLine();
         writer.close();
     }
 
@@ -83,57 +84,5 @@ public class MyStepdefs {
         driver.quit();
     }
 }
-
-
-//        for (String list : texts) {
-//            System.out.println(list);
-//        }
-
-
-//
-//        String fileName = "out.txt";
-//
-//        try {
-//            PrintWriter outputStream = new PrintWriter(fileName);
-//
-//            for (String list : texts) {
-//                if (list.contains(string)) {
-//                    outputStream.println(list);
-//                    outputStream.close();
-//                }
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-
-//        File myFile = new File("text.txt");
-//
-//        for (String list : texts) {
-//            BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
-//            if (list.contains(string)) {
-//                writer.write(list + "\n");
-//                writer.flush();
-//                writer.close();
-//            }
-//        }
-//
-//        driver.quit();
-//    }
-//}
-//
-//        for (String list : texts) {
-//            if(list.contains(string)){
-//                System.out.println(list);
-//            }
-//        }
-
-
-//        for (int i = 0; i < listItems.size(); i++) {
-//            if (listItems.get(i).getText().contains(string)) {
-//                System.out.println(listItems.get(i).getText());
-//                break;
-//            }
-//
-//        }
 
 

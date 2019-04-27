@@ -8,13 +8,13 @@ Feature: A description
     And In search field enter "<keywords>"
     Then All relevant topics with "<keywords>" are saved in the textfile
     Examples:
-      | keywords |
-#      | 2013     |
-#      | python   |
-#      | java     |
-#      | android  |
-#      | api      |
-      | ggdgdsghrdh    |
+      | keywords    |
+      | 2013        |
+      | python      |
+#      | java        |
+#      | android     |
+#      | api         |
+#      | ggdgdsghrdh |
 
 
 
