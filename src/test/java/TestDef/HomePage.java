@@ -26,7 +26,7 @@ public class HomePage {
         baseFunc.openPage(HOMEPAGE);
     }
 
-    public void enterKeyword(String string) {
+    public void searchForKeyword(String string) {
         baseFunc.getElement(search).click();
         baseFunc.getElement(search).sendKeys("'" + string + "'");
         baseFunc.getElement(search).submit();
@@ -50,7 +50,7 @@ public class HomePage {
             writer.newLine();
             writer.close();
         } catch (Exception e) {
-            System.out.println("xx");
+            System.out.println("something went wrong");
         };
     }
 
@@ -72,7 +72,7 @@ public class HomePage {
             writer2.flush();
             writer2.close();
         } catch (Exception e) {
-            System.out.println("xx");
+            System.out.println("something went wrong");
         };
     }
 }

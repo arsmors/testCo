@@ -16,7 +16,7 @@ public class MyStepdefs {
 
     @And("^In search field enter \"([^\"]*)\"$")
     public void inSearchFieldEnter(String string) throws IOException {
-        homePage.enterKeyword(string);
+        homePage.searchForKeyword(string);
         homePage.sortQuestionTopicsAndWriteToFile(string);
     }
 
