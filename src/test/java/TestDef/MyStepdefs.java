@@ -40,14 +40,14 @@ public class MyStepdefs {
     @And("^In search field enter \"([^\"]*)\"$")
     public void inSearchFieldEnter(String string) throws IOException {
         driver.findElement(search).click();
-        driver.findElement(search).sendKeys(string);
+        driver.findElement(search).sendKeys("title:" +string);
         driver.findElement(search).submit();
 
         List<WebElement> listItems = driver.findElements(listOfQuestions);
 
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
 
-        texts.removeIf(n -> !(n.contains(string)));
+   //     texts.removeIf(n -> !(n.contains(string)));
 
         File myFile = new File("text.txt");
 
@@ -66,7 +66,7 @@ public class MyStepdefs {
         List<WebElement> listItems = driver.findElements(listOfQuestions);
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
 
-        texts.removeIf(n -> !(n.contains(string)));
+   //     texts.removeIf(n -> !(n.contains(string)));
 
         String json = new Gson().toJson(texts);
 

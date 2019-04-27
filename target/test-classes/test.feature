@@ -9,6 +9,12 @@ Feature: A description
     Then All relevant topics with "<keywords>" are saved in the textfile
     Examples:
       | keywords |
-      | 2013    |
+#      | 2013     |
+#      | python   |
+#      | java     |
+#      | android  |
+#      | api      |
+      | ggdgdsghrdh    |
+
 
 
