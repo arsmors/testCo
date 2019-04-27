@@ -27,61 +27,45 @@ import java.util.stream.Stream;
 
 public class MyStepdefs {
     WebDriver driver;
-    public By search = By.xpath("//input[@placeholder='Search…']");
-//    public By listOfQuestions = By.xpath("//*[@class='result-link']");
-    public By listOfQuestions = By.xpath("//*[@class='question-hyperlink']");
+    public By listOfQuestions = By.xpath("//*[@class='result-link']");
+
+    BaseFunc baseFunc = new BaseFunc();
+    HomePage homePage = new HomePage(baseFunc);
 
     @When("^I get to stackoverflow webpage$")
     public void iGetToStackoverflowWebpage() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
-        driver = new ChromeDriver();
-        driver.get("https://stackoverflow.com");
+       homePage.openHomePage();
     }
 
     @And("^In search field enter \"([^\"]*)\"$")
     public void inSearchFieldEnter(String string) throws IOException {
-        driver.findElement(search).click();
-        driver.findElement(search).sendKeys("'" + string + "'");
-        driver.findElement(search).submit();
+        homePage.enterKeyword(string);
+        homePage.getQuestionTopicsAndWriteToFile(string);
 
-        List<WebElement> listItems = driver.findElements(listOfQuestions);
-        List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
-        texts.removeIf(n -> !(n.contains(string)));
-
-        File myFile = new File("text.txt");
-
-        BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
-        for (String text : texts) {
-
-            writer.write(text + "\n");
-            writer.flush();
-        }
-        writer.newLine();
-        writer.close();
     }
 
-    @Then("^All relevant topics with \"([^\"]*)\" are saved in the textfile$")
-    public void allRelevantTopicsWithAreSavedInTheTextfile(String string) throws Throwable {
-
-        List<WebElement> listItems = driver.findElements(listOfQuestions);
-        List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
-
-        texts.removeIf(n -> !(n.contains(string)));
-
-        String json = new Gson().toJson(texts);
-
-        JsonObject list = new JsonObject();
-        list.addProperty(string, json);
-
-        File myFile2 = new File("json.txt");
-        BufferedWriter writer2 = new BufferedWriter(new FileWriter(myFile2, true));
-
-        writer2.write(list.toString() + "\n");
-        writer2.flush();
-        writer2.close();
-
-        driver.quit();
-    }
+//    @Then("^All relevant topics with \"([^\"]*)\" are saved in the textfile$")
+//    public void allRelevantTopicsWithAreSavedInTheTextfile(String string) throws Throwable {
+//
+//        List<WebElement> listItems = driver.findElements(listOfQuestions);
+//        List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
+//
+//        texts.removeIf(n -> !(n.contains(string)));
+//
+//        String json = new Gson().toJson(texts);
+//
+//        JsonObject list = new JsonObject();
+//        list.addProperty(string, json);
+//
+//        File myFile2 = new File("json.txt");
+//        BufferedWriter writer2 = new BufferedWriter(new FileWriter(myFile2, true));
+//
+//        writer2.write(list.toString() + "\n");
+//        writer2.flush();
+//        writer2.close();
+//
+//        driver.quit();
+//    }
 }
 
 

@@ -1,0 +1,38 @@
+Q: Does Python have a ternary conditional operator?
+Q: What are metaclasses in Python?
+Q: Does Python have a string 'contains' substring method?
+Q: Calling an external command in Python
+Q: How can I safely create a nested directory in Python?
+Q: How can I make a time delay in Python?
+Q: Finding the index of an item given a list containing it in Python
+Q: Is there a way to run Python on Android?
+Q: How do I concatenate two lists in Python?
+Q: Manually raising (throwing) an exception in Python
+Q: Replacements for switch statement in Python?
+
+Q: Does Python have a ternary conditional operator?
+Q: What are metaclasses in Python?
+Q: Does Python have a string 'contains' substring method?
+Q: Calling an external command in Python
+Q: How can I safely create a nested directory in Python?
+Q: How can I make a time delay in Python?
+Q: Finding the index of an item given a list containing it in Python
+Q: Is there a way to run Python on Android?
+Q: How do I concatenate two lists in Python?
+Q: Manually raising (throwing) an exception in Python
+Q: Replacements for switch statement in Python?
+
+
+
+Q: Does Python have a ternary conditional operator?
+Q: What are metaclasses in Python?
+Q: Does Python have a string 'contains' substring method?
+Q: Calling an external command in Python
+Q: How can I safely create a nested directory in Python?
+Q: How can I make a time delay in Python?
+Q: Finding the index of an item given a list containing it in Python
+Q: Is there a way to run Python on Android?
+Q: How do I concatenate two lists in Python?
+Q: Manually raising (throwing) an exception in Python
+Q: Replacements for switch statement in Python?
+
