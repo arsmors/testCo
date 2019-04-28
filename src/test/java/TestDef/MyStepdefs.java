@@ -17,12 +17,12 @@ public class MyStepdefs {
     @And("^In search field enter \"([^\"]*)\"$")
     public void inSearchFieldEnter(String string) throws IOException {
         homePage.searchForKeyword(string);
-        homePage.sortQuestionTopicsAndWriteToFile(string);
     }
 
     @Then("^All relevant topics with \"([^\"]*)\" are saved in the textfile$")
     public void allRelevantTopicsWithAreSavedInTheTextfile(String string) throws Throwable {
-        homePage.sortQuestionTopicsAndWriteToJson(string);
+        homePage.writeToFile(string, "toFile");
+        homePage.writeToFile(string, "toJson");
         baseFunc.closePage();
     }
 }

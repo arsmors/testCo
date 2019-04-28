@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -32,47 +31,45 @@ public class HomePage {
         baseFunc.getElement(search).submit();
     }
 
-    public void sortQuestionTopicsAndWriteToFile(String string) {
+
+    public void writeToFile(String string, String write) {
         List<WebElement> listItems = baseFunc.getElements(listOfQuestions);
         List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
         texts.removeIf(n -> !(n.contains(string)));
 
-        File myFile = new File("text.txt");
+        if (write == "toFile") {
+            File myFile = new File("text.txt");
 
-        try {
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
+                for (String text : texts) {
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
-            for (String text : texts) {
-
-                writer.write(text + "\n");
-                writer.flush();
+                    writer.write(text + "\n");
+                    writer.flush();
+                }
+                writer.newLine();
+                writer.close();
+            } catch (Exception e) {
+                System.out.println("something went wrong");
             }
-            writer.newLine();
-            writer.close();
-        } catch (Exception e) {
-            System.out.println("something went wrong");
-        };
-    }
+            ;
 
-    public void sortQuestionTopicsAndWriteToJson(String string) {
-        List<WebElement> listItems = baseFunc.getElements(listOfQuestions);
-        List<String> texts = listItems.stream().map(WebElement::getText).collect(Collectors.toList());
+        } else if (write == "toJson") {
+            String json = new Gson().toJson(texts);
 
-        texts.removeIf(n -> !(n.contains(string)));
+            JsonObject list = new JsonObject();
+            list.addProperty(string, json);
 
-        String json = new Gson().toJson(texts);
-
-        JsonObject list = new JsonObject();
-        list.addProperty(string, json);
-
-        File myFile = new File("json.txt");
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
-            writer.write(list.toString() + "\n");
-            writer.flush();
-            writer.close();
-        } catch (Exception e) {
-            System.out.println("something went wrong");
-        };
+            File myFile = new File("json.txt");
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
+                writer.write(list.toString() + "\n");
+                writer.flush();
+                writer.close();
+            } catch (Exception e) {
+                System.out.println("something went wrong");
+            }
+            ;
+        }
     }
 }
