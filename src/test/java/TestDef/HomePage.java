@@ -65,12 +65,12 @@ public class HomePage {
         JsonObject list = new JsonObject();
         list.addProperty(string, json);
 
-        File myFile2 = new File("json.txt");
+        File myFile = new File("json.txt");
         try {
-            BufferedWriter writer2 = new BufferedWriter(new FileWriter(myFile2, true));
-            writer2.write(list.toString() + "\n");
-            writer2.flush();
-            writer2.close();
+            BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
+            writer.write(list.toString() + "\n");
+            writer.flush();
+            writer.close();
         } catch (Exception e) {
             System.out.println("something went wrong");
         };
