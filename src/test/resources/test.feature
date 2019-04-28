@@ -11,10 +11,10 @@ Feature: A description
       | keywords    |
       | 2013        |
       | Python      |
-#      | Java        |
-#      | Android     |
-#      | API         |
-#      | ggdgdsghrdh |
+      | Java        |
+      | Android     |
+      | API         |
+      | ggdgdsghrdh |
 
 
 
